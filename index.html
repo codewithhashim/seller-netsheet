@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <section class="calc-container">
+        <section class="content">
+            <section class="inputs">
+                <div>
+                    <span>Selling Price</span>
+                    <input type="number" placeholder="" id="sale-price" value="100000" />
+                </div>
+                <div>
+                    <input type="range" min="0" max="1000000" step="100" id="morgage-pay" /><output></output>
+                    <span>The amount required to pay mortgage to zero.</span>
+                </div>
+                <div>
+                    <span>Real Estate Brokerage Commission</span><span>% 6</span>
+                    <input type="range" min="0.5" max="6" step=".25" id="commission" />
+                </div>
+            </section>
+            <section class="result">
+                <div class="top">
+                    <div class="selling-price-output">
+                        <span class="title">Selling Price </span><span id="price"></span>
+                    </div>
+                    <div class="morgage-pay-output">
+                        <span class="title">Mortgage Payoff</span><span id="morgage-value"></span>
+                    </div>
+                    <div class="commission-output">
+                        <span class="title">Real Estate Brokerage Comission</span><span id="commission-value"></span>
+                    </div>
+                </div>
+                <div class="title-ins">
+                    <span>Title Insurance</span><span id="title-ins">$ 575.00</span>
+                </div>
+                <div class="title-search">
+                    <span>Title Search</span><span id="title-search">$ 175.00</span>
+                </div>
+                <div class="state-ds">
+                    <span>State Doc Stamps</span><span class="state-ds">$ 700.01</span>
+                </div>
+                <div class="lien-search">
+                    <span>Lien Search</span><span class="lien-search">$ 150.00</span>
+                </div>
+                <div class="closing-fee">
+                    <span>Closing Fee</span><span id="closing-fee">$ 349.00</span>
+                </div>
+                <div class="commission-result">
+                    <span>Broker's Commission</span><span id="commission-result">$</span>
+                </div>
+                <div class="estimated-proceeds">
+                    <span>Estimated Proceeds to Seller</span><span id="estimated-proceeds">$</span>
+                </div>
+            </section>
+        </section>
+    </section>
+    <script src="app.js"></script>
+</body>
+
+</html>

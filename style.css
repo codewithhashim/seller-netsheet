@@ -1,0 +1,7 @@
+.calc-container {
+  max-width: 1200px;
+  margin: auto;
+}
+.calc-container .content {
+  display: flex;
+}
