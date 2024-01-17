@@ -6,57 +6,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 
 <body>
     <section class="calc-container">
         <section class="content">
             <section class="inputs">
-                <div>
-                    <span>Selling Price</span>
-                    <input type="number" placeholder="" id="sale-price" value="100000" />
+                <div class="ccb-calc-heading">
+                    <h3>Estimated Proceeds to Seller</h3>
                 </div>
-                <div>
-                    <input type="range" min="0" max="1000000" step="100" id="morgage-pay" /><output></output>
-                    <span>The amount required to pay mortgage to zero.</span>
+                <div class="calc-item__title">
+                    <div class="selling-input-div">
+                        <h4 class="cc-labels">Selling Price</h4>
+                        <input type="number" placeholder="" class="number-input" id="sale-price" value="100000" />
+                    </div>
+                    <div class="instruction">Min: 0 - Max: 100000000000000000000+</div>
                 </div>
-                <div>
-                    <span>Real Estate Brokerage Commission</span><span>% 6</span>
-                    <input type="range" min="0.5" max="6" step=".25" id="commission" />
+                <div class="calc-item__title">
+                    <div class="mortgage-head">
+                        <h4 class="cc-labels">Mortgage Payoff</h4>
+                        <span><b id="mortgage-amount">0</b></span>
+                    </div>
+                    <div class="range-slider">
+                        <div id="slider_thumb" class="range-slider_thumb"></div>
+                        <div class="range-slider_line">
+                            <div id="slider_line" class="range-slider_line-fill"></div>
+                        </div>
+                        <input id="morgage-pay" class="range-slider_input" type="range" value="0" min="0"
+                            max="100000" />
+                    </div>
+
+                    <div class="instruction">
+                        The amount required to pay mortgage to zero.
+                    </div>
+                </div>
+                <div class="calc-item__title">
+                    <div class="commission-heading">
+                        <h4 class="cc-labels">Real Estate Brokerage Commission</h4>
+                        <span class="sign">
+                            <span class="commission-value">3.5</span> %
+                        </span>
+                    </div>
+
+                    <div class="range-sliderc">
+                        <div id="slider_thumbc" class="range-slider_thumbc"></div>
+                        <div class="range-slider_linec">
+                            <div id="slider_linec" class="range-slider_line-fillc"></div>
+                        </div>
+                        <input id="commission" class="range-slider_inputc" type="range" value="3.5" min="0.5" step=".25"
+                            max="6" />
+                    </div>
+
+                    <div class="instruction low-high">
+                        <span class="low">0.5</span>
+                        <span class="high">6</span>
+                    </div>
+                    <div class="instruction">
+                        <span class="">(adjustible)</span>
+                        <span class="line"></span>
+                    </div>
                 </div>
             </section>
             <section class="result">
-                <div class="top">
-                    <div class="selling-price-output">
-                        <span class="title">Selling Price </span><span id="price"></span>
+                <div class="ccb-calc-heading">
+                    <h3>Estimated Proceeds to Seller</h3>
+                    <span class="calc-accordion-btn" onclick="toggleTopSection()">
+                        <img src="https://floridaflatfeehomes.com/wp-content/svgs/arrowd.svg"
+                            alt="Toggle arrow - expand/collapse" style="transform: rotate(180deg)" id="calc-toggle" />
+                    </span>
+                </div>
+                <div class="top" id="toggle-results">
+                    <div class="selling-price-output outputs">
+                        <span class="title">Selling Price </span>
+                        <span class="sub-item-space"></span>
+                        <span class="sign">$<span id="price">100,000.00</span></span>
                     </div>
-                    <div class="morgage-pay-output">
-                        <span class="title">Mortgage Payoff</span><span id="morgage-value"></span>
+                    <div class="morgage-pay-output outputs">
+                        <span class="title">Mortgage Payoff</span>
+                        <span class="sub-item-space"></span>
+                        <span class="sign">$<span id="morgage-value">0.00</span></span>
                     </div>
-                    <div class="commission-output">
-                        <span class="title">Real Estate Brokerage Comission</span><span id="commission-value"></span>
+                    <div class="commission-output outputs">
+                        <span class="title">Real Estate Brokerage Comission</span>
+                        <span class="sub-item-space"></span>
+                        <span class="sign"><span class="commission-value">3.5</span>%</span>
                     </div>
                 </div>
-                <div class="title-ins">
-                    <span>Title Insurance</span><span id="title-ins">$ 575.00</span>
-                </div>
-                <div class="title-search">
-                    <span>Title Search</span><span id="title-search">$ 175.00</span>
-                </div>
-                <div class="state-ds">
-                    <span>State Doc Stamps</span><span class="state-ds">$ 700.01</span>
-                </div>
-                <div class="lien-search">
-                    <span>Lien Search</span><span class="lien-search">$ 150.00</span>
-                </div>
-                <div class="closing-fee">
-                    <span>Closing Fee</span><span id="closing-fee">$ 349.00</span>
-                </div>
-                <div class="commission-result">
-                    <span>Broker's Commission</span><span id="commission-result">$</span>
-                </div>
-                <div class="estimated-proceeds">
-                    <span>Estimated Proceeds to Seller</span><span id="estimated-proceeds">$</span>
+                <div class="all-outputs">
+                    <div class="title-ins make-flex">
+                        <span>Title Insurance</span>
+                        <span class="sign">$ <span id="title-ins">575.00</span> </span>
+                    </div>
+                    <div class="title-search make-flex">
+                        <span>Title Search</span>
+                        <span class="sign">$<span id="title-search"> 175.00</span> </span>
+                    </div>
+                    <div class="state-ds make-flex">
+                        <span>State Doc Stamps</span>
+                        <span class="sign">$<span id="state-ds"> 700.01</span> </span>
+                    </div>
+                    <div class="lien-search make-flex">
+                        <span>Lien Search</span>
+                        <span class="sign">$<span id="lien-search"> 150.00</span> </span>
+                    </div>
+                    <div class="closing-fee make-flex">
+                        <span>Closing Fee</span>
+                        <span class="sign">$<span id="closing-fee"> 349.00</span> </span>
+                    </div>
+                    <div class="commission-result make-flex">
+                        <span>Broker's Commission</span>
+                        <span class="sign">$
+                            <span id="commission-result"></span>
+                        </span>
+                    </div>
+                    <div class="estimated-proceeds make-flex">
+                        <span>Estimated Proceeds to Seller</span>
+                        <span class="sign">$
+                            <span id="estimated-proceeds"></span>
+                        </span>
+                    </div>
                 </div>
             </section>
         </section>
