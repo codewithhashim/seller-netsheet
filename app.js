@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const estimatedProceedsOutput = document.getElementById("estimated-proceeds");
 
   // Set default values
-  sellingPriceInput.value = 234099887766;
-  mortgagePayoffInput.value = 300900;
+  sellingPriceInput.value = 100000;
+  mortgagePayoffInput.value = 0;
   commissionInput.value = 3.5;
 
   // Call updateOutputs initially to set default values
